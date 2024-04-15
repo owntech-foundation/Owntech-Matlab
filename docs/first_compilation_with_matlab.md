@@ -163,7 +163,7 @@ With the serial monitor we can visualize current and voltage from the sensor, in
 
 It is necessary to add C:\\Users\\ **user** \\.platformio\\penv\\Scripts (**user** is your user name on the computer) to your system path. This process depends on your OS, for example on windows 10 we recommend that you follow this [guide.](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
 
-For linux users, you can call this command from the command window: `setenv("PATH",\[getenv("PATH"),':/home/username/.platformio/penv/bin'\])` Where home is your home directory and username is your user name. If your platformio is installed somewhere else, please change this path.
+For linux users, you can call this command from the command window: `setenv("PATH",[getenv("PATH"),':/home/username/.platformio/penv/bin'])` Where home is your home directory and username is your user name. If your platformio is installed somewhere else, please change this path.
 
 You are now all set to generate your first code !
 ## How to generate
