@@ -9,7 +9,7 @@ git clone https://gitlab.laas.fr/owntech/owntech-matlab.git
 git checkout Ownblock_library_V3
 ```
 === " "
-    ![Library in simulink]Images(/owntech_library_simulink.png){ width=300 align=left }
+    ![Library in simulink](Images/owntech_library_simulink.png){ width=300 align=left }
 
     In the folder where the repository is cloned, you will find a file with the extension **.mtltbx** which is a matlab toolbox. There are multiple toolbox, choose the one correspondings to your OS and open it with matlab (in matlab press `ctrl+o` then open the chosen file), and the toolbox will be installed automatically.
 
@@ -51,21 +51,21 @@ Let's see how each of this blocks work, starting by the initialize block.
 
     This block will generate the initialization step for the hardware and software configuration. You can choose the convention for the legs (buck, boost) and the version of the board.
 
-![initialization_setting.png](Images/initialization_setting.png){ width=300 }
+![initialization_setting.png](Images/initialization_setting.png)
 
 You can left it as it is to continue with the default value. 
 
-### Increase/decrease functions and pwr_enable state
 
-![function_states](Images/function_states.PNG){ width=300 }
+=== " Increase/decrease functions and pwr_enable state "
+    ![function_states](Images/function_states.PNG){ width=300 align=left }
 
-Inside the simulink file, we can see two functions that you can use to increment or decrement variables that you have defined. We will see how to use them later in another section of this tutorial. You can also notice that there is a variable pwr_enable, the state of this variable is used to activate or deactivate the PWM command of the converters.
+    Inside the simulink file, we can see two functions that you can use to increment or decrement variables that you have defined. We will see how to use them later in another section of this tutorial. You can also notice that there is a variable pwr_enable, the state of this variable is used to activate or deactivate the PWM command of the converters.
 
-### The application task and the control loop
 
-![application_and_control](Images/application_and_control.PNG){ width=300 }
+=== " The application task and the control loop "
+    ![application_and_control](Images/application_and_control.PNG){ width=300 align=left }
 
-We have two blocks here, we will focus on them to generate our code. The first one is the application_loop_task which works at a period of 100ms. Currently it is empty, but it will allow us later to define voltage reference and duty cycle here. 
+    We have two blocks here, we will focus on them to generate our code. The first one is the application_loop_task which works at a period of 100ms. Currently it is empty, but it will allow us later to define voltage reference and duty cycle here. 
 
 === " "
     ![inside_the_control_loop](Images/inside_the_control_loop.PNG){ width=300 align=left }
