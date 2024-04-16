@@ -12,13 +12,17 @@ Name this data store block duty_cycle, and in the signal attribute tab choose th
 
 ![signal_atributes](Images/signal_atributes.PNG)
 
-Then enter inside the increase function block, take a “data store read” and a “data store write” from simulink library and link them with duty_cycle (name them duty_cycle). With the association of the “constant” and “add” block from simulink you can form the following schema :
 
-![inside_increase](Images/inside_increase.PNG)
+=== " "
+    ![inside_increase](Images/inside_increase.PNG){ width=400 align=left }
 
-You can do the same thing in the decrease function block, instead of an addition it will be a subtraction :
+    Then enter inside the increase function block, take a “data store read” and a “data store write” from simulink library and link them with duty_cycle (name them duty_cycle). With the association of the “constant” and “add” block from simulink you can form the following schema.
 
-![inside_decrease](Images/inside_decrease.PNG)
+=== " "
+    ![inside_decrease](Images/inside_decrease.PNG){ width=300 align=left }
+
+    You can do the same thing in the decrease function block, instead of an addition it will be a subtraction.
+
 
 You have now the possibility to control the duty_cycle either by increasing or decreasing it, the only thing missing is sending this value to the converters. Inside control_loop_task, we will first uncomment the `POWER_ON` to activate power : click on the block then press ctrl+shift+x. We will then place a “data store read” block linked to duty_cycle and a `set leg duty` block connected together.
 

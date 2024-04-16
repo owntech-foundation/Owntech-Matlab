@@ -166,11 +166,13 @@ Execute the binary file to launch ownplot, start it and open the “send” tab.
 
  This process depends on your OS: 
 
-=== "Windows"
-    It is necessary to add C:\\Users\\ **user** \\.platformio\\penv\\Scripts (user is your user name on the computer) to your system path. We recommend that you follow this [guide.](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
+ !!! example OS config
 
-=== "Linux"
-    You can call this command from matlab command window: `setenv("PATH",[getenv("PATH"),':/home/username/.platformio/penv/bin'])` Where home is your home directory and username is your user name. If your platformio is installed somewhere else, please change this path.
+    === "Windows"
+        It is necessary to add C:\\Users\\ **user** \\.platformio\\penv\\Scripts (user is your user name on the computer) to your system path. We recommend that you follow this [guide.](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
+
+    === "Linux"
+        You can call this command from matlab command window: `setenv("PATH",[getenv("PATH"),':/home/username/.platformio/penv/bin'])` Where home is your home directory and username is your user name. If your platformio is installed somewhere else, please change this path.
 
 
 
