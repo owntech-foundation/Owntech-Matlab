@@ -45,8 +45,8 @@ git checkout matlab_zephyrV3
 
 Let's see how each of this blocks work, starting by the initialize block.
 
-
-=== "Initialize block"
+### Initialize block
+=== " "
     ![initialize_block](Images/initialize_block.PNG){ width=200 align=left}
 
     This block will generate the initialization step for the hardware and software configuration. You can choose the convention for the legs (buck, boost) and the version of the board.
@@ -55,8 +55,8 @@ Let's see how each of this blocks work, starting by the initialize block.
 
 You can left it as it is to continue with the default value. 
 
-
-=== " Increase/decrease functions and pwr_enable state "
+###  Increase/decrease functions and pwr_enable state 
+=== " "
     ![function_states](Images/function_states.PNG){ width=300 align=left }
 
     Inside the simulink file, we can see two functions that you can use to increment or decrement variables that you have defined. We will see how to use them later in another section of this tutorial. You can also notice that there is a variable pwr_enable, the state of this variable is used to activate or deactivate the PWM command of the converters.
