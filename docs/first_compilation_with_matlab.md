@@ -8,11 +8,13 @@ There is a set of simulinks blocks ready to be used, to install it first clone t
 git clone https://gitlab.laas.fr/owntech/owntech-matlab.git
 git checkout Ownblock_library_V3
 ```
-In the folder where the repository is cloned, you will find a file with the extension **.mtltbx** which is a matlab toolbox. There are multiple toolbox, choose the one correspondings to your OS and open it with matlab (in matlab press `ctrl+o` then open the chosen file), and the toolbox will be installed automatically.
+=== " "
+    ![Library in simulink](Images/owntech_library_simulink.png){ align=left }
 
-After the installation you can check that the library has been correctly installed. In simuinks "Library Brower" you can see if Owntech Library is present.
+    In the folder where the repository is cloned, you will find a file with the extension **.mtltbx** which is a matlab toolbox. There are multiple toolbox, choose the one correspondings to your OS and open it with matlab (in matlab press `ctrl+o` then open the chosen file), and the toolbox will be installed automatically.
 
-![Library in simulink](Images/owntech_library_simulink.png)
+    After the installation you can check that the library has been correctly installed. In simuinks "Library Brower" you can see if Owntech Library is present.
+
 
 ## Simulink template
 
@@ -24,7 +26,7 @@ git checkout matlab_zephyrV3
 
 This folder will now contain multiple folders and files : 
 
-```
+``` title="Resulting folder file structure"
 ├── LICENSE
 ├── matlab_file
 ├── owntech
@@ -34,12 +36,12 @@ This folder will now contain multiple folders and files :
 └── zephyr
 ```
 
-Make sure that your working directory in matlab is the folder `matlab_file`. Browse for the folder in matlab : 
+=== " "
+    ![browse folder](Images/browse_folder.png){ align=left }
 
-![browse folder](Images/browse_folder.png)
+    Make sure that your working directory in matlab is the folder `matlab_file`. Browse for the folder in matlab.
 
-
-In matlab_file, there is a simulink file (owntech_template.slx) already set to be used for code generation. Open it and let’s take a look at what is inside :
+    In matlab_file, there is a simulink file (owntech_template.slx) already set to be used for code generation. Open it and let’s take a look at what is inside :
 
 ![Simulink_template](Images/Simulink_template.PNG)
 
@@ -67,17 +69,19 @@ Inside the simulink file, we can see two functions that you can use to increment
 
 We have two blocks here, we will focus on them to generate our code. The first one is the application_loop_task which works at a period of 100ms. Currently it is empty, but it will allow us later to define voltage reference and duty cycle here. 
 
-On the other hand the control_loop_task is faster, and works at 10kHz. We will typically use this block for all the critical tasks (sending the pwm command, PID implementation..). For now, the control_loop blocks contains a block called Interleaved_ON and depending on the value of pwr_enable, this block is supposed to activate the converter drivers. This block is currently commented to not activate the converter, we will uncomment it later on this tutorial.  
+=== " "
+    ![inside_the_control_loop](Images/inside_the_control_loop.PNG){ align=left }
 
-![inside_the_control_loop](Images/inside_the_control_loop.PNG)
+    On the other hand the control_loop_task is faster, and works at 10kHz. We will typically use this block for all the critical tasks (sending the pwm command, PID implementation..). For now, the control_loop blocks contains a block called Interleaved_ON and depending on the value of pwr_enable, this block is supposed to activate the converter drivers. This block is currently commented to not activate the converter, we will uncomment it later on this tutorial.  
 
-This concludes the presentation of the simulink template, before generating any code we will need to make some configuration with the serial monitor to visualize data and also send commands.
+
+    This concludes the presentation of the simulink template, before generating any code we will need to make some configuration with the serial monitor to visualize data and also send commands.
 
 ## Serial monitor setting
 
 If you check the main file (main.cpp) in the src folder, you will notice that we have essentially two modes :
 
-```cpp
+```cpp 
 
 enum serial_interface_menu_mode //LIST OF POSSIBLE MODES FOR THE OWNTECH CONVERTER
 {
@@ -90,11 +94,10 @@ enum serial_interface_menu_mode //LIST OF POSSIBLE MODES FOR THE OWNTECH CONVERT
 The idle mode will turn off the PWM signal sent to the converters, while the matlab mode will execute the generated code. If you look at the loop_communication_task inside the main file, you will see all the commands needed to activate either the idle mode or the matlab mode, but also to use the increase `Up_function()` and decrease `Dwn_function()` functions defined in the simulink template. For example, if we send “m” to the serial monitor, we will switch to the matlab mode.
 
 
-```cpp
+```cpp title="different modes and command to send"
 void loop_communication_task()
 {
-   while(1) {
-        
+    while(1) {
         received_serial_char = console_getchar();
         switch (received_serial_char) {
             case 'h':
@@ -127,11 +130,8 @@ void loop_communication_task()
                 break;    
             default:
                 break;
-
         }
-   }
-
-
+    }
 }
 ```
 

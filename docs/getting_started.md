@@ -10,21 +10,17 @@ Owntech blocksets might be useful for you if:
 -    You work in fields like research and development, simulation, or other areas where Matlab/Simulink is used regularly.
 -    You are interested in quickly generating and deploying code using Simulink blocksets and the Embedded Coder add-on.
 
-# Prerequisites
+!!! tip
+    It is not required, but you can try to follow first this [tutorial](https://github.com/owntech-foundation/Tutorials/wiki) to become familiar with owntech hardware and software.
 
-It is not required, but you can try to follow first this [tutorial](https://github.com/owntech-foundation/Tutorials/wiki) to become familiar with owntech hardware and software.
+!!! abstract Hardware prerequisite
 
-## Hardware
+    - A TWIST power board
+    - A 50V power supply
+    - A resistive load (like an electronic load, or a variable resistive load)
 
-- A Twist power board
-- A 50V power supply
-- A resistive load (like an electronic load, or a variable resistive load)
+!!! abstract Software prerequisite
 
-
-## Software
-
-- Matlab-Simulink, with embedded coder add-on
-
-- Visual Studio Code with PlatformIO, refer to the tutorial
-
-- Git
+    - Matlab-Simulink
+    - Embedded coder toolbox
+    - [Visual Studio Code with PlatformIO](https://owntech-foundation.github.io/Documentation/core/docs/vscode_setup/)
