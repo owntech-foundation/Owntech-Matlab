@@ -41,7 +41,7 @@ git checkout matlab_zephyrV3
 
     In matlab_file, there is a simulink file (owntech_template.slx) already set to be used for code generation. Open it and let’s take a look at what is inside :
 
-![Simulink_template](Images/Simulink_template.PNG){ width=300 }
+![Simulink_template](Images/Simulink_template.PNG)
 
 Let's see how each of this blocks work, starting by the initialize block.
 
