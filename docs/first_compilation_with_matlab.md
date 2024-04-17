@@ -85,7 +85,6 @@ enum serial_interface_menu_mode //LIST OF POSSIBLE MODES FOR THE OWNTECH CONVERT
 {
     IDLEMODE =0,
     MATLABMODE
-
 };
 ```
 
@@ -166,13 +165,11 @@ Execute the binary file to launch ownplot, start it and open the “send” tab.
 
  This process depends on your OS: 
 
- !!! example OS config
+=== "Windows"
+    It is necessary to add C:\\Users\\ **user** \\.platformio\\penv\\Scripts (user is your user name on the computer) to your system path. We recommend that you follow this [guide.](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
 
-    === "Windows"
-        It is necessary to add C:\\Users\\ **user** \\.platformio\\penv\\Scripts (user is your user name on the computer) to your system path. We recommend that you follow this [guide.](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
-
-    === "Linux"
-        You can call this command from matlab command window: `setenv("PATH",[getenv("PATH"),':/home/username/.platformio/penv/bin'])` Where home is your home directory and username is your user name. If your platformio is installed somewhere else, please change this path.
+=== "Linux"
+    You can call this command from matlab command window: `setenv("PATH",[getenv("PATH"),':/home/username/.platformio/penv/bin'])` Where home is your home directory and username is your user name. If your platformio is installed somewhere else, please change this path.
 
 
 
